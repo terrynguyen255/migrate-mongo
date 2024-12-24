@@ -91,9 +91,7 @@ describe("up", () => {
 
   function mockChangelogLockCollection() {
     const findStub = {
-      toArray: () => {
-        return [];
-      }
+      toArray: () => []
     }
 
     return {
@@ -246,9 +244,7 @@ describe("up", () => {
       lockTtl: 0
     });
     const findStub = {
-      toArray: () => {
-        return [{ createdAt: new Date() }];
-      }
+      toArray: () => [{ createdAt: new Date() }]
     }
     changelogLockCollection.find.returns(findStub);
 
@@ -274,9 +270,7 @@ describe("up", () => {
 
   it("should yield an error when changelog is locked", async() => {
     const findStub = {
-      toArray: () => {
-        return [{ createdAt: new Date() }];
-      }
+      toArray: () => [{ createdAt: new Date() }]
     }
     changelogLockCollection.find.returns(findStub);
 
