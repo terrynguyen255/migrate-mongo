@@ -84,6 +84,7 @@ describe("down", () => {
       insertOne: sinon.stub().returns(Promise.resolve()),
       createIndex: sinon.stub().returns(Promise.resolve()),
       find: sinon.stub().returns(findStub),
+      update: sinon.stub().returns(Promise.resolve({upsertedCount: 1})),
       deleteMany: sinon.stub().returns(Promise.resolve()),
     }
   }
@@ -245,7 +246,7 @@ describe("down", () => {
       expect.fail("Error was not thrown");
     } catch (err) {
       expect(err.message).to.deep.equal(
-        "Could not create a lock: Kernel panic"
+        "Could not obtain a lock: Kernel panic"
       );
     }
   });
