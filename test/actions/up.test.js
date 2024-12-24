@@ -98,7 +98,7 @@ describe("up", () => {
       insertOne: sinon.stub().returns(Promise.resolve()),
       createIndex: sinon.stub().returns(Promise.resolve()),
       find: sinon.stub().returns(findStub),
-      update: sinon.stub().returns(Promise.resolve({upsertedCount: 1})),
+      updateMany: sinon.stub().returns(Promise.resolve({upsertedCount: 1})),
       deleteMany: sinon.stub().returns(Promise.resolve()),
     }
   }
